@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#090909"
+    tools:context=".LogInActivity">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:src="@drawable/icon_telegram"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIconCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Telegram"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivIcon" />
+
+
+    <TextView
+        android:id="@+id/tvLoginCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="143dp"
+        android:text="Login"
+        android:textColor="#5E5E5E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvIconCaption" />
+
+    <EditText
+        android:id="@+id/etLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:background="#090909"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLoginCaption" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etLogin" />
+
+    <TextView
+        android:id="@+id/tvPasswordCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66dp"
+        android:text="Password"
+        android:layout_marginTop="22dp"
+        android:textColor="#5E5E5E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etLogin" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:background="#090909"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPasswordCaption" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+    
+    <Button
+        android:id="@+id/bSignIn"
+        android:layout_width="90dp"
+        android:layout_height="36dp"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/shape_sign_in_button"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
+        android:text="Sign in"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

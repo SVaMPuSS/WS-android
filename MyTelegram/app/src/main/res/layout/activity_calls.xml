@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#090909"
+    tools:context=".CallsActivity">
+
+    <include
+        android:id="@+id/incHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        layout="@layout/include_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_header"
+        app:layout_constraintTop_toBottomOf="@id/incHeader" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/incHeader"
+        app:tabIndicatorColor="@color/white"
+        app:tabTextColor="@color/white">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tiAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="All" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tiFavorites"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Favorites" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tiMissed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Missed" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCalls"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tvFooter"
+        app:layout_constraintTop_toBottomOf="@id/tvNavigationBar" />
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/shape_footer"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibChats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:background="#00000000"
+        android:onClick="OnClickChangeNavigation"
+        android:src="@drawable/icon_chats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter" />
+
+    <ImageButton
+        android:id="@+id/ibCalls"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_calls_light"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterCaption"
+        app:layout_constraintLeft_toRightOf="@id/ibContacts"
+        app:layout_constraintRight_toLeftOf="@id/ibChats"
+        app:layout_constraintTop_toTopOf="@id/tvFooter"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageButton
+        android:id="@+id/ibContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:background="#00000000"
+        android:onClick="OnClickChangeNavigation"
+        android:src="@drawable/icon_contacts_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter" />
+
+    <TextView
+        android:id="@+id/tvFooterCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calls"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ibCalls"
+        app:layout_constraintRight_toRightOf="@id/ibCalls"
+        app:layout_constraintTop_toBottomOf="@id/ibCalls" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

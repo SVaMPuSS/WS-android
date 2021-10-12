@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#090909"
+    tools:context=".Chats.ChatsActivity">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:background="@drawable/shape_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUserIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        android:elevation="12dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivUserIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/meme" />
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/shape_search"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvHeader"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvUserIcon"
+        android:paddingLeft="64dp"
+        android:hint="Search messages &amp; people"
+        android:textColorHint="#5E5E5E"/>
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:src="@drawable/icon_search"
+        app:layout_constraintBottom_toBottomOf="@id/etSearch"
+        app:layout_constraintLeft_toLeftOf="@id/etSearch"
+        app:layout_constraintTop_toTopOf="@id/etSearch" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Chats"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/cvUserIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibAddContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="14dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_add_cross"
+        app:layout_constraintRight_toLeftOf="@id/ibEditContact"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_pen_edit"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tvFooter"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/shape_footer"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibChats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_chats_light"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterCaption"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageButton
+        android:id="@+id/ibCalls"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00000000"
+        android:onClick="OnClickChangeNavigation"
+        android:src="@drawable/icon_calls"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ibContacts"
+        app:layout_constraintRight_toLeftOf="@id/ibChats"
+        app:layout_constraintTop_toTopOf="@id/tvFooter" />
+
+    <ImageButton
+        android:id="@+id/ibContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:background="#00000000"
+        android:onClick="OnClickChangeNavigation"
+        android:src="@drawable/icon_contacts_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter" />
+
+    <TextView
+        android:id="@+id/tvFooterCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calls"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ibChats"
+        app:layout_constraintRight_toRightOf="@id/ibChats"
+        app:layout_constraintTop_toBottomOf="@id/ibChats" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

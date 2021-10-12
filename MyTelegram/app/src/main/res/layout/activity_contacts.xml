@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#090909"
+    tools:context=".Contact.ContactsActivity">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/shape_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUserIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        android:elevation="12dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivUserIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/meme" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Contacts"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/cvUserIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibAddContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="14dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_add_cross"
+        app:layout_constraintRight_toLeftOf="@id/ibEditContact"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_pen_edit"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSymbolsForSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="19dp"
+        android:text="A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+        android:textColor="#929292"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tvFooter"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/shape_footer"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibChats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_chats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter"
+        android:onClick="OnClickChangeNavigation"/>
+
+    <ImageButton
+        android:id="@+id/ibCalls"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00000000"
+        android:src="@drawable/icon_calls"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ibContacts"
+        app:layout_constraintRight_toLeftOf="@id/ibChats"
+        app:layout_constraintTop_toTopOf="@id/tvFooter"
+        android:onClick="OnClickChangeNavigation"/>
+
+    <ImageButton
+        android:id="@+id/ibContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toTopOf="@id/tvFooterCaption"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFooter"
+        android:src="@drawable/icon_contacts"/>
+
+    <TextView
+        android:id="@+id/tvFooterCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contacts"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/ibContacts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/ibContacts"
+        app:layout_constraintRight_toRightOf="@id/ibContacts"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
