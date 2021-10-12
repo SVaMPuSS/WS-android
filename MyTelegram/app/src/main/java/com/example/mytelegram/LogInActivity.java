@@ -22,7 +22,9 @@ public class LogInActivity extends AppCompatActivity {
         Login = findViewById(R.id.etLogin);
         Password = findViewById(R.id.etPassword);
         findViewById(R.id.bSignIn).setOnClickListener(v -> StartContactActivity());
-    
+
+        int i = 0;
+        i++;
 
     }
 
