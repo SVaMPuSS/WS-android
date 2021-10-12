@@ -36,6 +36,23 @@ public class LogInActivity extends AppCompatActivity {
         i++;
         i++;
         i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
     }
 
     private void StartContactActivity(){
